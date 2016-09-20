@@ -17,8 +17,7 @@ ActiveRecord::Schema.define(version: 20160920103905) do
   enable_extension "plpgsql"
 
   create_table "amenities", force: :cascade do |t|
-    t.integer  "listing_id"
-    t.integer  "amenity_id"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,7 +32,8 @@ ActiveRecord::Schema.define(version: 20160920103905) do
   end
 
   create_table "listing_amenities", force: :cascade do |t|
-    t.string   "name"
+    t.integer  "listing_id"
+    t.integer  "amenity_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20160920103905) do
     t.string   "location"
     t.string   "capacity"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: :cascade do |t|
