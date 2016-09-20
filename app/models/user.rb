@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   include Clearance::User
 # authentications for facebook
   has_many :authentications, :dependent => :destroy
+  has_many :listings, :dependent=> :destroy
 # validation for others log in
   validates :email, :uniqueness=>true ,format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, on: :create }
   validates :password ,presence: true
