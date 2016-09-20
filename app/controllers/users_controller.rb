@@ -1,5 +1,11 @@
 class UsersController < Clearance::UsersController
 
+
+  def new
+      @user = user_from_params
+      render template: "users/new"
+    end
+
   def create
 
     @user = user_from_params

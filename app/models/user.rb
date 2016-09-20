@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   include Clearance::User
+
+  include Clearance::User
 # authentications for facebook
   has_many :authentications, :dependent => :destroy
 # validation for others log in

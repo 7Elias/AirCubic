@@ -29,7 +29,7 @@ gem'clearance'
 #sercurity
 gem "figaro"
 
-#omniauth-facebook 
+#omniauth-facebook
 gem 'omniauth'
 
 gem 'omniauth-facebook'
