@@ -39,12 +39,11 @@ ActiveRecord::Schema.define(version: 20160920103905) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.string   "type_of"
-    t.string   "property"
+    t.string   "property_type"
     t.string   "room_type"
     t.string   "city"
     t.string   "location"
-    t.string   "capacity"
+    t.integer  "capacity"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

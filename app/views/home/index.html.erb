@@ -5,7 +5,7 @@
 
 
 <%= form_for :listings do |form| %>
-<%= select_tag(:country, options_for_select([['Lisbon', 1], ['Madrid', 2]])) %>
+<%= select_tag(:property_type, options_for_select([['Lisbon', 1], ['Madrid', 2]])) %>
 <div class="submit-field">
 <%= form.submit%>
 </div>
