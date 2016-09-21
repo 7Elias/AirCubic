@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160920103905) do
   end
 
   create_table "listings", force: :cascade do |t|
+    t.string   "list_name"
     t.string   "property_type"
     t.string   "room_type"
     t.string   "city"
