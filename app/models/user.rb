@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   create! do |u|
       u.name = auth_hash["extra"]["raw_info"]["name"]
       u.email = auth_hash["extra"]["raw_info"]["email"]
-      u.avatar= auth_hash["info"]["image"]
+      u.remote_avatar_url = auth_hash["info"]["image"].gsub('http://','https://')
       u.password = SecureRandom.hex(6)
       u.remember_token = SecureRandom.hex(4)
       u.authentications<<(authentication)

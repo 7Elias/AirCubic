@@ -5,14 +5,15 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   include CarrierWave::MiniMagick
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [300, 300]
+  # process :resize_and_pad => [160, 160]
 
   version :thumb do
     process resize_to_fill: [200,200]
   end
 
   version :small_thumb, from_version: :thumb do
-    process resize_to_fill: [20, 20]
+    process resize_to_fill: [40, 40]
   end
 
   # Choose what kind of storage to use for this uploader:
