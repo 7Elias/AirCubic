@@ -1,1 +1,12 @@
- <%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %>
+
+<%= form_for :listings do |form| %>
+<%= select_tag(:property_type, options_for_select([['Lisbon', 1], ['Madrid', 2]])) %>
+
+ <%= form.collection_check_boxes(:amenity_ids, Amenity.all, :id, :name) %>
+<div class="submit-field">
+<%= form.submit%>
+</div>
+<%end%>
+
+
+ <!-- <%= f.collection_check_boxes(:group_ids, Group.all, :id, :name) %> -->
