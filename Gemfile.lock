@@ -47,12 +47,10 @@ GEM
       sass (>= 3.3.4)
     builder (3.2.2)
     byebug (9.0.5)
-    carrierwave (0.11.2)
-      activemodel (>= 3.2.0)
-      activesupport (>= 3.2.0)
-      json (>= 1.7)
+    carrierwave (1.0.0.beta)
+      activemodel (>= 4.0.0)
+      activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-      mimemagic (>= 0.3.0)
     clearance (1.14.2)
       bcrypt
       email_validator (~> 1.4)
@@ -94,7 +92,6 @@ GEM
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mimemagic (0.3.2)
     mini_magick (4.5.1)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
@@ -190,7 +187,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.3.6)
   byebug
-  carrierwave
+  carrierwave (>= 1.0.0.beta, < 2.0)
   clearance
   coffee-rails (~> 4.1.0)
   figaro

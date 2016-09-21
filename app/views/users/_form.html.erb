@@ -13,3 +13,9 @@
   <%= form.label :password %>
   <%= form.password_field :password %>
 </div>
+
+<div class="text-field">
+  <%= form.label :avatar %>
+  <%=form.file_field :avatar %>
+  <%= form.hidden_field :avatar_cache %>
+</div>

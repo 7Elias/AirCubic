@@ -8,11 +8,16 @@ class User < ActiveRecord::Base
   validates :password ,presence: true
 
 
+#User AvatarUploader
+  mount_uploader :avatar, AvatarUploader
+
 # method from OmniAuth for facebook
   def self.create_with_auth_and_hash(authentication,auth_hash)
-    create! do |u|
+
+  create! do |u|
       u.name = auth_hash["extra"]["raw_info"]["name"]
       u.email = auth_hash["extra"]["raw_info"]["email"]
+      u.avatar= auth_hash["info"]["image"]
       u.password = SecureRandom.hex(6)
       u.remember_token = SecureRandom.hex(4)
       u.authentications<<(authentication)
