@@ -1,2 +1,8 @@
-
-  <%= render "listings/form" %>
+<%= form_for :listings do |form| %>
+<%= select( "listing", "room_type", { "Private Room" => "private room", "Shared Room" => "shared room", "Entire Home/Apt" => "entire home/apt"}) %>
+<!-- <%= select_tag(:property_type, options_for_select([['Condominium', 1], ['Services Apartment', 2], ['Landed Property', 3]])) %> -->
+ <%= form.collection_check_boxes(:amenity_ids, Amenity.all, :id, :name) %>
+<div class="submit-field">
+<%= form.submit%>
+</div>
+<%end%>

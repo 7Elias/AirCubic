@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
 
 # method from OmniAuth for facebook
   def self.create_with_auth_and_hash(authentication,auth_hash)
-
   create! do |u|
       u.name = auth_hash["extra"]["raw_info"]["name"]
       u.email = auth_hash["extra"]["raw_info"]["email"]

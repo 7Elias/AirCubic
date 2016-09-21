@@ -15,8 +15,10 @@
 </div>
 
 <div class="text-field">
-  <%= form.label :avatar %>
-  <%=form.file_field :avatar %>
+  <%= form.label :profile_photo %>
   <%= form.hidden_field :avatar_cache %>
+    <%=form.file_field :avatar %>
+  <%= form.text_field :remote_avatar_url %>
+  <%= form.label :remote_avatar_url, "or image URL" %>
   <%= form.text_field :remote_avatar_url %>
 </div>

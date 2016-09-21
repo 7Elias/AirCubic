@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :listings,controller: "listings" do
     resources :amenities
   end
+  
   #OmniAuth for facebook
   resources :users, only: [:show, :edit, :update, :destroy]
   #OmniAuth for facebook
