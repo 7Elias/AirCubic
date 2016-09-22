@@ -29,7 +29,13 @@
   <%= form.label :capacity %>
   <%= form.text_field :capacity%>
 </div>
-
+<div class="text-field">
+  <%= form.label :price,'RM' %>
+  <%= form.text_field :price%>
+</div>
+<div class="check-box">
  <%= form.collection_check_boxes(:amenity_ids, Amenity.all, :id, :name) %>
- <%= form.submit 'dasd' %>
+ </div>
+ <%= form.file_field :avatars, multiple: true %>
+ <%= form.submit 'list now' %>
 <%end%>

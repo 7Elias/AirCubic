@@ -8,6 +8,14 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process resize_to_fit: [300, 300]
   # process :resize_and_pad => [160, 160]
 
+  version :large do
+    process resize_to_limit: [1000, 1000]
+  end
+
+  version :medium, :from_version => :large do
+    process resize_to_limit: [500, 500]
+  end
+
   version :thumb do
     process resize_to_fill: [200,200]
   end
@@ -16,9 +24,17 @@ class AvatarUploader < CarrierWave::Uploader::Base
     process resize_to_fill: [40, 40]
   end
 
+  version :square do
+   process :resize_to_limit => [300, 300]
+ end
+
+ def extension_whitelist
+   %w(jpg jpeg gif png)
+ end
+
   # Choose what kind of storage to use for this uploader:
   storage :file
-  # storage :fog
+  #storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

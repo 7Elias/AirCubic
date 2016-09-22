@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+
+  #clearance
   resources :passwords, controller: "clearance/passwords", only: [:create, :new]
   resource :session, controller: "clearance/sessions", only: [:create]
 
@@ -9,12 +11,12 @@ Rails.application.routes.draw do
 
   end
 
-  resources :listings,controller: "listings" do
-    resources :amenities
-  end
-  
+  resources :listings
+  resources :reservations
   #OmniAuth for facebook
   resources :users, only: [:show, :edit, :update, :destroy]
+
+
   #OmniAuth for facebook
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 

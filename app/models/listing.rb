@@ -2,6 +2,8 @@ class Listing < ActiveRecord::Base
   has_many :listing_amenities
   has_many :amenities, through: :listing_amenities
 
+  mount_uploaders :avatars, AvatarUploader
+
   enum room_type: {
     'Private Room': '1',
     'Shared Room': '2',
