@@ -1,6 +1,7 @@
 class Listing < ActiveRecord::Base
   has_many :listing_amenities
   has_many :amenities, through: :listing_amenities
+  has_many :reservations
 
   mount_uploaders :avatars, AvatarUploader
 

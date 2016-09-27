@@ -1,5 +1,5 @@
 class Reservation < ActiveRecord::Base
-  has_and_belongs_to_many :listings
+  belongs_to :listing
   has_many :users
 
 end

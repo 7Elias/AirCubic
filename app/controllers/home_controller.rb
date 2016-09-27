@@ -1,8 +1,12 @@
 class HomeController < ApplicationController
   def index
-    @listings = Listing.all.order("created_at desc")
+
+  @listings = Listing.order('created_at DESC').page(params[:page]).per(15)
     render template: "home/index"
   end
+  def new
+  end
+
 
 
 end
