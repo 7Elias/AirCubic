@@ -40,8 +40,14 @@ gem "mini_magick"
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 gem 'momentjs-rails', '>= 2.9.0'
-gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
 
+#date picker
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.42'
+gem "jquery-ui-rails"
+
+#pagination
+gem 'kaminari'
+gem 'kaminari-bootstrap'
 
 #cloud storage ,google
 gem 'fog'
