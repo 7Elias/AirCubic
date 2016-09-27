@@ -52,6 +52,7 @@ gem 'kaminari-bootstrap'
 #cloud storage ,google
 gem 'fog'
 
+gem 'sidekiq'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
